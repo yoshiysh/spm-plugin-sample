@@ -12,7 +12,7 @@ let package = Package(
     products: [
         .library(
             name: "App",
-            targets: ["App"]),
+            targets: ["App"])
     ],
     dependencies: [
     ],
@@ -20,7 +20,7 @@ let package = Package(
         .target(
             name: "App",
             dependencies: [],
-            plugins: ["SwiftGenPlugin"]
+            plugins: ["SwiftGenPlugin", "SwiftLintPlugin"]
         ),
         
         // === Plugins -----
@@ -37,10 +37,21 @@ let package = Package(
                 dependencies: ["swiftgen"]
             ),
         
+            .binaryTarget(
+                name: "SwiftLintBinary",
+                path: "./../Artifacts/SwiftLintBinary.artifactbundle"
+            ),
+
+            .plugin(
+                name: "SwiftLintPlugin",
+                capability: .buildTool(),
+                dependencies: ["SwiftLintBinary"]
+            ),
+        
         // ==== Tests -----
         
         .testTarget(
             name: "MyPackageTests",
-            dependencies: []),
+            dependencies: [])
     ]
 )
