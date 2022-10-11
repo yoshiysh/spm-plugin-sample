@@ -2,6 +2,34 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:swiftgen.yml">
+   </FileRef>
+   <Group
+      location = "group:Artifacts"
+      name = "Artifacts">
+      <Group
+         location = "group:SwiftLintBinary.artifactbundle"
+         name = "SwiftLintBinary.artifactbundle">
+         <FileRef
+            location = "group:LICENSE">
+         </FileRef>
+         <FileRef
+            location = "group:info.json">
+         </FileRef>
+         <Group
+            location = "group:swiftlint-0.50.0-rc.1-macos"
+            name = "swiftlint-0.50.0-rc.1-macos">
+            <Group
+               location = "group:bin"
+               name = "bin">
+               <FileRef
+                  location = "group:swiftlint">
+               </FileRef>
+            </Group>
+         </Group>
+      </Group>
+   </Group>
+   <FileRef
       location = "group:Package">
    </FileRef>
    <FileRef
